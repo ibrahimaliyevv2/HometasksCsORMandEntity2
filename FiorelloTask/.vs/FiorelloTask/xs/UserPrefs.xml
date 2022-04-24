@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{7E12FD64-CF58-4F8E-A818-936392A53829}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FiorelloTask/Program.cs">
+    <Files>
+      <File FileName="FiorelloTask/Program.cs" Line="23" Column="37" />
+      <File FileName="FiorelloTask/Services/UserService.cs" Line="12" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FiorelloTask" expanded="True">
+            <Node name="FiorelloTask" expanded="True">
+              <Node name="DAL" expanded="True" />
+              <Node name="Entities" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.FiorelloTask PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
