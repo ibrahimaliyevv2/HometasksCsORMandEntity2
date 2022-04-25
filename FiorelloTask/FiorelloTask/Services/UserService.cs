@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FiorelloTask.DAL;
 using FiorelloTask.Entities;
+using FiorelloTask.Exceptions;
 
 namespace FiorelloTask.Services
 {
@@ -12,7 +13,15 @@ namespace FiorelloTask.Services
 
         public List<Comment> GetCommentsByUserId(int userId)
         {
-            return taskDbContext.Comments.Where(x => x.UserId == userId).ToList();
+            List<Comment> NewComments = taskDbContext.Comments.Where(x => x.UserId == userId).ToList();
+            if (NewComments!=null)
+            {
+                return NewComments;
+            }
+            else
+            {
+                throw new NotFoundException("Comment yazmayib bu user!");
+            }
         }
     }
 }

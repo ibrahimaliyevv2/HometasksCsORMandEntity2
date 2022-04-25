@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FiorelloTask.DAL;
 using FiorelloTask.Entities;
+using FiorelloTask.Exceptions;
 
 namespace FiorelloTask.Services
 {
@@ -19,7 +20,16 @@ namespace FiorelloTask.Services
 
        public List<Comment> GetCommentsThroughDateRange(DateTime startDate, DateTime endDate)
         {
-            return taskDbContext.Comments.Where(x=>x.CreatedAt >= startDate && x.CreatedAt<endDate).ToList();
+            List<Comment> NewComments = taskDbContext.Comments.Where(x => x.CreatedAt >= startDate && x.CreatedAt < endDate).ToList();
+            if (NewComments != null)
+            {
+                return NewComments;
+            }
+            else
+            {
+                throw new NotFoundException("Commentler yoxdu bu vaxt araliginda!");
+            }
+            
         }
     }
 }

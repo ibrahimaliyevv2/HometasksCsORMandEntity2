@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FiorelloTask.DAL;
 using FiorelloTask.Entities;
+using FiorelloTask.Exceptions;
 
 namespace FiorelloTask.Services
 {
@@ -12,8 +13,16 @@ namespace FiorelloTask.Services
 
         public void AddProduct(Product product)
         {
-            taskDbContext.Products.Add(product);
-            taskDbContext.SaveChanges();
+            var list = taskDbContext.Products.Where(x => x.Name == product.Name).ToList();
+            if (list.Count>0)
+            {
+                throw new AlreadyExistException("Bele product artiq movcuddur!");
+            }
+            else
+            {
+                taskDbContext.Products.Add(product);
+                taskDbContext.SaveChanges();
+            }
         }
 
         public Product GetProductById(int id)
